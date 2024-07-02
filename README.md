@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# Aplicación de Agendamiento de citas
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esta es una aplicación simple de agendamiento construida con React y Redux. La aplicación permite a los usuarios ver, agregar, editar y eliminar citas. También incluye un filtro para mostrar citas por fecha.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- Ver citas agendadas
+- Filtrar citas por fecha
+- Agregar nuevas citas
+- Editar y eliminar citas existentes
+- Ver detalles de la cita
 
-### `npm start`
+## Requisitos Técnicos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React con Hooks
+- Redux para la gestión del estado
+- styled-components para el estilado
+- json-server para simular API
+- Jest y React Testing Library para pruebas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Comenzando
 
-### `npm test`
+### Prerrequisitos
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (>= 12.x)
+- npm (>= 6.x)
 
-### `npm run build`
+### Instalación
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clona el repositorio:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```bash
+   git clone https://github.com/tu-usuario/scheduling-app.git
+   cd scheduling-app
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Instalar Dependencias
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Iniciar el Servidor de la API Simulada
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm run server
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Iniciar la Aplicación React
 
-## Learn More
+```bash
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+La aplicación estará disponible en [http://localhost:3000](http://localhost:3000).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Ejecutar Pruebas
 
-### Code Splitting
+Para ejecutar las pruebas, utiliza el siguiente comando:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run test
+```
 
-### Analyzing the Bundle Size
+## Arquitectura
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+La aplicación está estructurada de la siguiente manera:
 
-### Making a Progressive Web App
+- `src/`: Contiene todo el código fuente de la aplicación
+  - `components/`: Contiene los componentes de React
+    - `AppointmentForm.js`: Componente para agregar y editar citas
+    - `AppointmentList.js`: Componente para mostrar la lista de citas
+  - `redux/`: Contiene la lógica de Redux
+    - `appointmentsSlice.js`: Slice de Redux para gestionar el estado de las citas
+    - `store.js`: Configura el store de Redux
+  - `App.js`: El componente principal de la aplicación
+  - `index.js`: El punto de entrada de la aplicación
+  - `GlobalStyles.js`: Contiene estilos globales para la aplicación
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Styled-components
 
-### Advanced Configuration
+La aplicación utiliza styled-components para el estilado. Los estilos globales están definidos en `GlobalStyles.js`, y cada componente tiene sus propios styled-components para un estilado modular y encapsulado.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## API Simulada
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La aplicación utiliza json-server para simular la API para operaciones CRUD. El servidor simulado se ejecuta en [http://localhost:3001](http://localhost:3001) y sirve datos desde `db.json`.
+```
